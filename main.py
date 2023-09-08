@@ -17,8 +17,7 @@ class Config:
         try:
             response = self.secrets_manager.get_secret_value(SecretId=secret_name)
             if 'SecretString' in response:
-                print(response)
-                return json.loads(response['SecretString'])
+                return response['SecretString']
             return None
         except (ClientError,):
             return None

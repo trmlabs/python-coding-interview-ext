@@ -11,7 +11,7 @@ from botocore.exceptions import ClientError
 
 class Config:
     def __init__(self):
-        self.secrets_manager = boto3.client('secretsmanager')
+        self.secrets_manager = boto3.client('secretsmanager, region_name='us-east-1')
 
     def get_secret_from_aws(self, secret_name):
         try:

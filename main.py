@@ -75,6 +75,8 @@ if __name__ == "__main__":
     config = Config()
     conn_string = config.get_conn_string()
     db = DatabaseConnection(conn_string)
+
+    print(conn_string)
     session = db.get_session()
 
     dedupe_data(session, "crypto_transactions")

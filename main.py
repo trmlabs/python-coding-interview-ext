@@ -18,7 +18,7 @@ class Config:
             response = self.secrets_manager.get_secret_value(SecretId=secret_name)
             if 'SecretString' in response:
                 return response['SecretString']
-            return None
+            return None)
         except (ClientError,):
             return None
 
